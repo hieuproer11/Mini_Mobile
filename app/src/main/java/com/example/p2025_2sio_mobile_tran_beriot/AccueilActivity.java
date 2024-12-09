@@ -28,7 +28,18 @@ public class AccueilActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-    }
 
-    private Button selectButton;
+
+    }
+    public Button createButton;
+    private ListView listViewJeux;
+
+    private ArrayList<JeuDeSociete> mesJeux = new ArrayList<JeuDeSociete>();
+
+    private void init()
+    {
+        mesJeux.add(new JeuDeSociete("Monopoly","Lorem Ipsum, bla bla bla","Hasbro",15.65,"photo",1));
+        mesJeux.add(new JeuDeSociete("TTMC","Lorem Ipsum, bla bla bla","A",20,"photo",2500));
+        mesJeux.add(new JeuDeSociete("AAAAAA","Lorem Ipsum, bla bla bla","AAAAAA",15.65,"photo",0));
+    }
 }
