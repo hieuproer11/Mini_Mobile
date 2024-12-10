@@ -3,10 +3,10 @@ package com.example.p2025_2sio_mobile_tran_beriot;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +15,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public class AccueilActivity extends AppCompatActivity {
 
@@ -31,15 +32,54 @@ public class AccueilActivity extends AppCompatActivity {
 
 
     }
-    public Button createButton;
-    private ListView listViewJeux;
 
+    private JeuDeSociete leJeu;
     private ArrayList<JeuDeSociete> mesJeux = new ArrayList<JeuDeSociete>();
 
-    private void init()
+    private ArrayAdapter dataAdapter;
+    private Button createButton;
+
+    private ListView listViewJeux;
+
+    private Button viewButton;
+
+    public void initialisation()
     {
-        mesJeux.add(new JeuDeSociete("Monopoly","Lorem Ipsum, bla bla bla","Hasbro",15.65,"photo",1));
-        mesJeux.add(new JeuDeSociete("TTMC","Lorem Ipsum, bla bla bla","A",20,"photo",2500));
-        mesJeux.add(new JeuDeSociete("AAAAAA","Lorem Ipsum, bla bla bla","AAAAAA",15.65,"photo",0));
+        createButton.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(AccueilActivity.this, CreateActivity.class);
+            startActivity(intent);
+        }});
+        createButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AccueilActivity.this, ViewActivity.class);
+                startActivity(intent);
+            }});
+
+
+        listViewJeux.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                leJeu = mesJeux.get(position);
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
+
     }
+
+
+
+
+
+//    private void init()
+//    {
+//        mesJeux.add(new JeuDeSociete("Monopoly","Lorem Ipsum, bla bla bla","Hasbro",15.65,"photo",1));
+//        mesJeux.add(new JeuDeSociete("TTMC","Lorem Ipsum, bla bla bla","A",20,"photo",2500));
+//        mesJeux.add(new JeuDeSociete("AAAAAA","Lorem Ipsum, bla bla bla","AAAAAA",15.65,"photo",0));
+//    }
 }
