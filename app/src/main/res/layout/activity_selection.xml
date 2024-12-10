@@ -23,11 +23,12 @@
         android:id="@+id/bConfirmer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="100dp"
         android:backgroundTint="@color/red"
         android:text="@string/bConfirmer"
         app:layout_constraintBottom_toTopOf="@+id/bRetour"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView

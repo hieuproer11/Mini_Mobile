@@ -58,6 +58,11 @@ public class SelectActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(SelectActivity.this, DetailActivity.class);
                 intent.putExtra("MesJeux", mesJeux);
+                intent.putExtra("nom", leJeu.getNom());
+                intent.putExtra("desc", leJeu.getDesc());
+                intent.putExtra("auteur", leJeu.getAuteur());
+                intent.putExtra("prix", leJeu.getPrix());
+                intent.putExtra("nbjou", leJeu.getNbjou());
                 startActivity(intent);
             }});
 

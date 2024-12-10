@@ -52,12 +52,14 @@ public class AccueilActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             Intent intent = new Intent(AccueilActivity.this, AjouterActivity.class);
+            intent.putExtra("MesJeux", mesJeux);
             startActivity(intent);
         }});
         viewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AccueilActivity.this, SelectActivity.class);
+                intent.putExtra("MesJeux", mesJeux);
                 startActivity(intent);
             }});
 
