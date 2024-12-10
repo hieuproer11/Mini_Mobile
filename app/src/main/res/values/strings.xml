@@ -3,5 +3,5 @@
     <string name="messageAcceuil">Jeux de Société</string>
     <string name="selectButton">Liste de Jeux</string>
     <string name="createButton">Ajouter Jeu</string>
-
+    <string name="viewButton">Voir Jeu</string>
 </resources>
