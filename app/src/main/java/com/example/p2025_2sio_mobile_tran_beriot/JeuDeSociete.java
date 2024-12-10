@@ -1,5 +1,7 @@
 package com.example.p2025_2sio_mobile_tran_beriot;
 
+import androidx.annotation.NonNull;
+
 import java.io.Serializable;
 
 public class JeuDeSociete implements Serializable {
@@ -19,6 +21,13 @@ public class JeuDeSociete implements Serializable {
         this.nbjou = nbjou;
     }
 
+
+
+    @NonNull
+    @Override
+    public String toString() {
+        return nom;
+    }
     public String getNom() {
         return nom;
     }
