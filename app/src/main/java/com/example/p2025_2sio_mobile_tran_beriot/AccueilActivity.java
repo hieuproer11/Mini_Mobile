@@ -24,12 +24,12 @@ public class AccueilActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_accueil);
+        initialisation();
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
 
     }
 
@@ -45,6 +45,9 @@ public class AccueilActivity extends AppCompatActivity {
 
     public void initialisation()
     {
+        mesJeux = (ArrayList<JeuDeSociete>) getIntent().getSerializableExtra("MesJeux");
+
+
         createButton.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -68,7 +71,6 @@ public class AccueilActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
-
 
     }
 
