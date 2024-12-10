@@ -33,7 +33,6 @@ public class SelectActivity extends AppCompatActivity {
 
     private JeuDeSociete leJeu;
     private ArrayList<JeuDeSociete> mesJeux;
-    private ArrayAdapter arrayAdapter;
     private Spinner spinnerJeux;
     private Button bConfirmer;
     private Button bRetour;
