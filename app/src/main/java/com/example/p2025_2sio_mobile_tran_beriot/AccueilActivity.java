@@ -43,7 +43,7 @@ public class AccueilActivity extends AppCompatActivity {
 
     private Button viewButton;
 
-    public void initialisation()
+    private void initialisation()
     {
         mesJeux = (ArrayList<JeuDeSociete>) getIntent().getSerializableExtra("MesJeux");
 
@@ -54,7 +54,7 @@ public class AccueilActivity extends AppCompatActivity {
             Intent intent = new Intent(AccueilActivity.this, AjouterActivity.class);
             startActivity(intent);
         }});
-        createButton.setOnClickListener(new View.OnClickListener() {
+        viewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AccueilActivity.this, SelectActivity.class);
