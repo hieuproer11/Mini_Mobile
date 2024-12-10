@@ -48,13 +48,13 @@ public class AccueilActivity extends AppCompatActivity {
         createButton.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(AccueilActivity.this, CreateActivity.class);
+            Intent intent = new Intent(AccueilActivity.this, AjouterActivity.class);
             startActivity(intent);
         }});
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AccueilActivity.this, ViewActivity.class);
+                Intent intent = new Intent(AccueilActivity.this, SelectActivity.class);
                 startActivity(intent);
             }});
 
