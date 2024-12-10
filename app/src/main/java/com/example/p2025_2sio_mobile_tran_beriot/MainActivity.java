@@ -25,8 +25,11 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextLogin;
     private EditText editTextMdp;
     private Button buttonConnect;
-    private ArrayList<Utilisateur> mesUtilisateurs;
+    private ArrayList<Utilisateur> mesUtilisateurs = new ArrayList<>();
     private Utilisateur user;
+    private ArrayList <JeuDeSociete> mesJeux = new ArrayList<>();
+    private JeuDeSociete jeu1;
+    private JeuDeSociete jeu2;
     private String login;
     private String mdp;
     private String msg;
@@ -34,10 +37,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initialisation();
-        init_Utilisateur();
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+        initialisation();
+        init_Utilisateur();
+        init_listeJeux();
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -45,8 +49,15 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    public void init_listeJeux(){
+        jeu1 = new JeuDeSociete("Monopoly","Lorem Ipsum, bla bla bla","Hasbro",15.65,"monopoly",4);
+        jeu2 = new JeuDeSociete("Echec","un jeu de gros cerveaux","un mec",20.19,"echec",4);
+        mesJeux.add(jeu1);
+        mesJeux.add(jeu2);
+    }
+
     public void initialisation(){
-        Intent intent = new Intent(MainActivity.this, AccueilActivity.class);
+
         textViewMain =(TextView) findViewById(R.id.textViewMain);
         textViewTitre =(TextView) findViewById(R.id.textViewTitre);
         textViewLogin =(TextView) findViewById(R.id.textViewLogin);
@@ -62,6 +73,8 @@ public class MainActivity extends AppCompatActivity {
                 mdp = editTextMdp.getText().toString();
                 if(controle(login,mdp)){
                     msg ="Connexion avec succès";
+                    Intent intent = new Intent(MainActivity.this, AccueilActivity.class);
+                    intent.putExtra("MesJeux", mesJeux);
                     startActivity(intent);
                 } else {
                     msg ="Connexion échoué";
@@ -73,13 +86,12 @@ public class MainActivity extends AppCompatActivity {
     }
     public void init_Utilisateur(){
         Utilisateur user1 = new Utilisateur("hieu","1122");
-        Utilisateur user2 = new Utilisateur("tran", "1234");
-        Utilisateur user3 = new Utilisateur("tran hieu", "2120");
+        Utilisateur user2 = new Utilisateur("alexis", "1234");
         mesUtilisateurs = new ArrayList<Utilisateur>();
         mesUtilisateurs.add(user1);
         mesUtilisateurs.add(user2);
-        mesUtilisateurs.add(user3);
     }
+
     public boolean controle(String login, String mdp){
         for(Utilisateur user: mesUtilisateurs) {
             if (user.getLogin().equals(login) && user.getMdp().equals(mdp)) {

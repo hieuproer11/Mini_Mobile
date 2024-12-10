@@ -3,9 +3,11 @@ package com.example.p2025_2sio_mobile_tran_beriot;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -15,31 +17,62 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public class AccueilActivity extends AppCompatActivity {
-
+    private TextView textViewHeader;
+    public Button createButton;
+    public Button viewButton;
+    private ListView listViewJeux;
+    private ArrayList<JeuDeSociete> mesJeux;
+    private ArrayAdapter dataAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_accueil);
+        initialisation();
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-
     }
-    public Button createButton;
-    private ListView listViewJeux;
 
-    private ArrayList<JeuDeSociete> mesJeux = new ArrayList<JeuDeSociete>();
+    public void initialisation(){
+        textViewHeader = (TextView) findViewById(R.id.textViewHeader);
+        createButton = (Button) findViewById(R.id.createButton);
+        listViewJeux =(ListView) findViewById(R.id.listViewJeux);
+        viewButton = (Button) findViewById(R.id.viewButton);
 
-    private void init()
-    {
-        mesJeux.add(new JeuDeSociete("Monopoly","Lorem Ipsum, bla bla bla","Hasbro",15.65,"photo",1));
-        mesJeux.add(new JeuDeSociete("TTMC","Lorem Ipsum, bla bla bla","A",20,"photo",2500));
-        mesJeux.add(new JeuDeSociete("AAAAAA","Lorem Ipsum, bla bla bla","AAAAAA",15.65,"photo",0));
+        if(getIntent().getSerializableExtra("MesJeux") == null){
+            mesJeux = new ArrayList<JeuDeSociete>();
+        }else {
+            mesJeux = (ArrayList<JeuDeSociete>) getIntent().getSerializableExtra("MesJeux");
+        }
+
+        dataAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, mesJeux.stream().map(JeuDeSociete::getNom).collect(Collectors.toList()));
+        listViewJeux.setAdapter(dataAdapter);
+
+        createButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AccueilActivity.this, AjouterActivity.class);
+                intent.putExtra("MesJeux",mesJeux);
+                startActivity(intent);
+            }
+        });
+
+        viewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(AccueilActivity.this, SelectActivity.class);
+                startActivity(intent1);
+            }
+        });
     }
+
+
+
 }
