@@ -4,4 +4,6 @@
     <string name="selectButton">Liste de Jeux</string>
     <string name="createButton">Ajouter Jeu</string>
     <string name="viewButton">Voir Jeu</string>
+    <string name="bRetour">Retour</string>
+    <string name="bConfirmer">Confirmer</string>
 </resources>
