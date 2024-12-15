@@ -76,6 +76,9 @@ public class DetailActivity extends AppCompatActivity {
             if(photo.equals("monopoly")){
                     this.imageViewJeu.setImageResource(R.drawable.monopoly);
             }
+            if(photo.equals("echec")){
+                    this.imageViewJeu.setImageResource(R.drawable.echec);
+            }
         }
 
         buttonRetour = (Button) findViewById(R.id.buttonRetour);

@@ -5,7 +5,8 @@
     android:id="@+id/selectPage"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/material_dynamic_neutral70">
+    android:backgroundTint="@color/material_dynamic_neutral70"
+    tools:context=".SelectActivity">
 
 
     <Button
@@ -14,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="92dp"
         android:backgroundTint="@color/red"
-        android:text="@string/bRetour"
+        android:text="Retour"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -23,16 +24,28 @@
         android:id="@+id/bConfirmer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
         android:layout_marginBottom="100dp"
         android:backgroundTint="@color/red"
-        android:text="@string/bConfirmer"
+        android:text="Confirmer"
         app:layout_constraintBottom_toTopOf="@+id/bRetour"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <Button
+        android:id="@+id/bSupprimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="100dp"
+        android:backgroundTint="@color/red"
+        android:text="Supprimer"
+        app:layout_constraintBottom_toTopOf="@+id/bRetour"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bConfirmer" />
+
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textViewSelection"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
@@ -46,12 +59,12 @@
 
     <Spinner
         android:id="@+id/spinnerJeux"
-        android:layout_width="429dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/bConfirmer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewSelection" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

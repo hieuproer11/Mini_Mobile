@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,18 +31,23 @@ public class SelectActivity extends AppCompatActivity {
             return insets;
         });
     }
-
+    private TextView textViewSelection;
     private JeuDeSociete leJeu;
     private ArrayList<JeuDeSociete> mesJeux;
     private Spinner spinnerJeux;
     private Button bConfirmer;
+    private Button bSupprimer;
     private Button bRetour;
 
 
     private void initialisation()
     {
         mesJeux = (ArrayList<JeuDeSociete>) getIntent().getSerializableExtra("MesJeux");
-
+        textViewSelection =(TextView) findViewById(R.id.textViewSelection);
+        spinnerJeux = (Spinner) findViewById(R.id.spinnerJeux);
+        bConfirmer = (Button) findViewById(R.id.bConfirmer);
+        bSupprimer = (Button) findViewById(R.id.bSupprimer);
+        bRetour = (Button) findViewById(R.id.bRetour);
         spinnerJeux.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

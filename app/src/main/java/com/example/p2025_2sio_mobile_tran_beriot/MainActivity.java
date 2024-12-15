@@ -82,7 +82,6 @@ public class MainActivity extends AppCompatActivity {
                 textViewMessage.setText(msg);
             }
         });
-
     }
     public void init_Utilisateur(){
         Utilisateur user1 = new Utilisateur("hieu","1122");
