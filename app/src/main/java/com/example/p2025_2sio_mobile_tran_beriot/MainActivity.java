@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void init_listeJeux(){
         jeu1 = new JeuDeSociete("Monopoly","Le but du jeu consiste à ruiner ses adversaires par des opérations immobilières","Hasbro",15.65,"monopoly",4);
-        jeu2 = new JeuDeSociete("Echec","deux joueurs possédant seize pièces chacun, respectivement blanches et noires, sur un échiquier de 64 cases","Palamède",20.19,"echec",2);
+        jeu2 = new JeuDeSociete("Echec","Deux joueurs possédant seize pièces chacun, respectivement blanches et noires, sur un échiquier de 64 cases","Palamède",20.19,"echec",2);
         jeu3 = new JeuDeSociete("Uno","Pour gagner une manche de Uno, il faut être le premier joueur à se défausser de la dernière carte de sa main","Merle Robbins",7.43,"uno",10);
         mesJeux.add(jeu1);
         mesJeux.add(jeu2);
