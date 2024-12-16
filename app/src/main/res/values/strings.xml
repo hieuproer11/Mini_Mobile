@@ -6,4 +6,5 @@
     <string name="viewButton">Voir Jeu</string>
     <string name="bRetour">Retour</string>
     <string name="bConfirmer">Confirmer</string>
+    <string name="bDeconnecter">Déconnecter</string>
 </resources>

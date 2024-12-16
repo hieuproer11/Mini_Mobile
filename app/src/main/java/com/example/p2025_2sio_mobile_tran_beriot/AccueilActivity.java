@@ -23,6 +23,7 @@ public class AccueilActivity extends AppCompatActivity {
     private TextView textViewHeader;
     public Button createButton;
     public Button viewButton;
+    public Button bDeconnecter;
     private ListView listViewJeux;
     private ArrayList<JeuDeSociete> mesJeux;
     private ArrayAdapter dataAdapter;
@@ -45,6 +46,7 @@ public class AccueilActivity extends AppCompatActivity {
         createButton = (Button) findViewById(R.id.createButton);
         listViewJeux =(ListView) findViewById(R.id.listViewJeux);
         viewButton = (Button) findViewById(R.id.viewButton);
+        bDeconnecter = (Button) findViewById(R.id.bDeconnecter);
 
         if(getIntent().getSerializableExtra("MesJeux") == null){
             mesJeux = new ArrayList<JeuDeSociete>();
@@ -70,6 +72,14 @@ public class AccueilActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(AccueilActivity.this, SelectActivity.class);
                 intent1.putExtra("MesJeux", mesJeux);
                 startActivity(intent1);
+            }
+        });
+
+        bDeconnecter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2 = new Intent(AccueilActivity.this, MainActivity.class);
+                startActivity(intent2);
             }
         });
     }
