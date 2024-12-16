@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +24,7 @@ public class AjouterActivity extends AppCompatActivity {
     private EditText editTextPrix;
     private EditText editTextNbjou;
     private Button buttonAjouer;
+    private Button bRetour2;
     private JeuDeSociete monJeu;
     private String nom;
     private String desc;
@@ -55,25 +57,46 @@ public class AjouterActivity extends AppCompatActivity {
         editTextPrix = (EditText) findViewById(R.id.editTextPrix);
         editTextNbjou = (EditText) findViewById(R.id.editTextNbjou);
         buttonAjouer = (Button) findViewById(R.id.buttonAjouter);
+        bRetour2 = (Button) findViewById(R.id.bRetour2);
 
         // Ajouter un article à la liste
         buttonAjouer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                // Récupérer les valeurs saisies
                 nom = editTextNom.getText().toString();
                 desc = editTextDesc.getText().toString();
                 auteur = editTextAuteur.getText().toString();
                 prix = Double.parseDouble(editTextPrix.getText().toString());
                 nbjou = Integer.parseInt(editTextNbjou.getText().toString());
-                monJeu = new JeuDeSociete(nom, desc, auteur, prix,"", nbjou);
+
+                // Créer un nouvel objet JeuDeSociete et l'ajouter à la liste
+                monJeu = new JeuDeSociete(nom, desc, auteur, prix, "", nbjou);
                 mesJeux.add(monJeu);
 
-                // Retourner la liste mise à jour à AccueilActivity
+                // Afficher un message de confirmation
+                Toast.makeText(AjouterActivity.this, "Jeu ajouté avec succès", Toast.LENGTH_SHORT).show();
+
+                // Effacer les champs de saisie
+                editTextNom.setText("");
+                editTextDesc.setText("");
+                editTextAuteur.setText("");
+                editTextPrix.setText("");
+                editTextNbjou.setText("");
+
+                // Optionnel : Réinitialiser le focus sur le premier champ
+                editTextNom.requestFocus();
+            }
+        });
+
+        bRetour2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 Intent intent = new Intent(AjouterActivity.this, AccueilActivity.class);
                 intent.putExtra("MesJeux", mesJeux);
                 startActivity(intent);
                 finish();
-
             }
         });
 

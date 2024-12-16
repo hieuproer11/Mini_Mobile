@@ -7,7 +7,17 @@
     android:layout_height="match_parent"
     tools:context=".DetailActivity">
 
-
+    <LinearLayout android:id="@+id/LinearLayout04"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:background="@drawable/fondecran2"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textViewDetailJeu"
@@ -27,7 +37,9 @@
         android:id="@+id/textViewNom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Nom"
+        android:text="Nom"
+        android:textStyle="bold"
+        android:textColor="@color/red"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="650dp"
         android:textSize="20sp"
@@ -40,7 +52,9 @@
         android:id="@+id/textViewDesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Desc"
+        android:text="Desc"
+        android:textStyle="bold"
+        android:textColor="@color/red"
         android:layout_marginTop="20dp"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,23 +62,27 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewNom" />
 
     <TextView
-    android:id="@+id/textViewAuteur"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:hint="Auteur"
-    android:layout_marginBottom="530dp"
-    android:layout_marginTop="10dp"
-    android:textSize="20sp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/textViewDesc" />
+        android:id="@+id/textViewAuteur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Auteur"
+        android:textStyle="bold"
+        android:textColor="@color/red"
+        android:layout_marginBottom="530dp"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDesc" />
 
     <TextView
         android:id="@+id/textViewPrix"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="prix"
+        android:text="prix"
+        android:textStyle="bold"
+        android:textColor="@color/red"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="500dp"
         android:textSize="20sp"
@@ -77,7 +95,9 @@
         android:id="@+id/textViewNbjou"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="nbjou"
+        android:text="nbjou"
+        android:textStyle="bold"
+        android:textColor="@color/red"
         android:layout_marginBottom="400dp"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"

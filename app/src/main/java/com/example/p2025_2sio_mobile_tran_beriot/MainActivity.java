@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList <JeuDeSociete> mesJeux = new ArrayList<>();
     private JeuDeSociete jeu1;
     private JeuDeSociete jeu2;
+    private JeuDeSociete jeu3;
     private String login;
     private String mdp;
     private String msg;
@@ -50,10 +51,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void init_listeJeux(){
-        jeu1 = new JeuDeSociete("Monopoly","Lorem Ipsum, bla bla bla","Hasbro",15.65,"monopoly",4);
-        jeu2 = new JeuDeSociete("Echec","un jeu de gros cerveaux","un mec",20.19,"echec",4);
+        jeu1 = new JeuDeSociete("Monopoly","Le but du jeu consiste à ruiner ses adversaires par des opérations immobilières","Hasbro",15.65,"monopoly",4);
+        jeu2 = new JeuDeSociete("Echec","deux joueurs possédant seize pièces chacun, respectivement blanches et noires, sur un échiquier de 64 cases","Palamède",20.19,"echec",2);
+        jeu3 = new JeuDeSociete("Uno","Pour gagner une manche de Uno, il faut être le premier joueur à se défausser de la dernière carte de sa main","Merle Robbins",7.43,"uno",10);
         mesJeux.add(jeu1);
         mesJeux.add(jeu2);
+        mesJeux.add(jeu3);
     }
 
     public void initialisation(){

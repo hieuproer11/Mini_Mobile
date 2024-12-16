@@ -13,6 +13,9 @@
         android:theme="@style/Theme.P2025_2SIO_Mobile_TRAN_BERIOT"
         tools:targetApi="31">
         <activity
+            android:name=".SelectActivity"
+            android:exported="false"/>
+        <activity
             android:name=".AjouterActivity"
             android:exported="false" />
         <activity

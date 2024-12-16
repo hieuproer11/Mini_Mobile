@@ -8,12 +8,24 @@
     android:backgroundTint="@color/material_dynamic_neutral90"
     tools:context=".AccueilActivity">
 
+    <LinearLayout android:id="@+id/LinearLayout02"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:background="@drawable/fondecran2"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textViewHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/messageAcceuil"
+        android:textStyle="bold"
         android:textColor="@color/cyan"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -48,6 +60,7 @@
 
     <ListView
         android:id="@+id/listViewJeux"
+        android:background="@color/white"
         android:layout_width="328dp"
         android:layout_height="389dp"
         android:layout_marginStart="1dp"

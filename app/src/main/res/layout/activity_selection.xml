@@ -5,9 +5,19 @@
     android:id="@+id/selectPage"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/material_dynamic_neutral70"
     tools:context=".SelectActivity">
 
+    <LinearLayout android:id="@+id/LinearLayout05"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:background="@drawable/fondecran2"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </LinearLayout>
 
     <Button
         android:id="@+id/bRetour"
@@ -24,7 +34,7 @@
         android:id="@+id/bConfirmer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="70dp"
         android:layout_marginBottom="100dp"
         android:backgroundTint="@color/red"
         android:text="Confirmer"
@@ -49,9 +59,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:text="Jeu de Société"
+        android:text="Sélectionnez votre jeu"
+        android:textStyle="bold"
         android:textColor="@color/cyan"
-        android:textSize="24sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,6 +70,7 @@
 
     <Spinner
         android:id="@+id/spinnerJeux"
+        android:background="@color/white"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:minHeight="48dp"

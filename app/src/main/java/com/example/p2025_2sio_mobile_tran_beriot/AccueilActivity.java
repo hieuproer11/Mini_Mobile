@@ -68,6 +68,7 @@ public class AccueilActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent1 = new Intent(AccueilActivity.this, SelectActivity.class);
+                intent1.putExtra("MesJeux", mesJeux);
                 startActivity(intent1);
             }
         });

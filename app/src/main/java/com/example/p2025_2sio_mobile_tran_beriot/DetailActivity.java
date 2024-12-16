@@ -13,6 +13,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.ArrayList;
+
 public class DetailActivity extends AppCompatActivity {
     private TextView textViewDetailJeu;
     private TextView textViewNom;
@@ -22,6 +24,7 @@ public class DetailActivity extends AppCompatActivity {
     private TextView textViewNbjou;
     private ImageView imageViewJeu;
     private Button buttonRetour;
+    private ArrayList <JeuDeSociete> mesJeux = new ArrayList<>();
     private String nom;
     private String desc;
     private String auteur;
@@ -43,6 +46,9 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     public void initialisation() {
+
+        mesJeux = (ArrayList<JeuDeSociete>) getIntent().getSerializableExtra("MesJeux");
+
         textViewDetailJeu = (TextView) findViewById(R.id.textViewDetailJeu);
         Intent intent = getIntent();
         textViewNom = (TextView) findViewById(R.id.textViewNom);
@@ -66,26 +72,33 @@ public class DetailActivity extends AppCompatActivity {
             textViewPrix.setText("le prix pour un set est: " + prix + " euros");
         }
         textViewNbjou = (TextView) findViewById(R.id.textViewNbjou);
-        if(intent.hasExtra("ndjou")){
+        if(intent.hasExtra("nbjou")){
             nbjou = intent.getIntExtra("nbjou",0);
             textViewNbjou.setText("Le nombre de joueurs total est: " + nbjou);
         }
         imageViewJeu = (ImageView) findViewById(R.id.imageViewJeu);
         if(intent.hasExtra("photo")){
-            photo =intent.getStringExtra("photo");
+            photo = intent.getStringExtra("photo");
             if(photo.equals("monopoly")){
                     this.imageViewJeu.setImageResource(R.drawable.monopoly);
             }
             if(photo.equals("echec")){
                     this.imageViewJeu.setImageResource(R.drawable.echec);
             }
+            if(photo.equals("uno")){
+                this.imageViewJeu.setImageResource(R.drawable.uno);
+            }
+            if(photo.equals("")){
+                this.imageViewJeu.setImageResource(R.drawable.fondecran1);
+            }
         }
 
         buttonRetour = (Button) findViewById(R.id.buttonRetour);
-        Intent intent1 = new Intent(DetailActivity.this, SelectActivity.class);
         buttonRetour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent1 = new Intent(DetailActivity.this, SelectActivity.class);
+                intent1.putExtra("MesJeux", mesJeux);
                 startActivity(intent1);
             }
         });

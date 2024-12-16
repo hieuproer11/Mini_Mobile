@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">P2025_2SIO_Mobile_TRAN_BERIOT</string>
-    <string name="messageAcceuil">Jeux de Société</string>
+    <string name="messageAcceuil">Liste Des Jeux Société Disponibles</string>
     <string name="selectButton">Liste de Jeux</string>
     <string name="createButton">Ajouter Jeu</string>
     <string name="viewButton">Voir Jeu</string>
