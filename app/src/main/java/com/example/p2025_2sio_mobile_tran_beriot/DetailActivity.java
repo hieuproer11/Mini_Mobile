@@ -88,6 +88,12 @@ public class DetailActivity extends AppCompatActivity {
             if(photo.equals("uno")){
                 this.imageViewJeu.setImageResource(R.drawable.uno);
             }
+            if(photo.equals("warhammer")){
+                this.imageViewJeu.setImageResource(R.drawable.warhammer);
+            }
+            if(photo.equals("arkham")){
+                this.imageViewJeu.setImageResource(R.drawable.arkham);
+            }
             if(photo.equals("")){
                 this.imageViewJeu.setImageResource(R.drawable.fondecran1);
             }

@@ -56,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
         jeu1 = new JeuDeSociete("Monopoly","Le but du jeu consiste à ruiner ses adversaires par des opérations immobilières","Hasbro",15.65,"monopoly",4);
         jeu2 = new JeuDeSociete("Echec","Deux joueurs possédant seize pièces chacun, respectivement blanches et noires, sur un échiquier de 64 cases","Palamède",20.19,"echec",2);
         jeu3 = new JeuDeSociete("Uno","Pour gagner une manche de Uno, il faut être le premier joueur à se défausser de la dernière carte de sa main","Merle Robbins",7.43,"uno",10);
-        jeu4 = new JeuDeSociete("Horreur à Arkham","Vous êtes des investigateurs essayant de sauver la ville d'Arkham et par extension, le monde, de sombrer dans le Chaos face à de Grands Anciens.","A",20,"",8);
-        jeu5 = new JeuDeSociete("Warhammer 40 000","Vous  êtes au commande d'une Armée provenant d'une des nombreuses factions du 41ème Millénaire et devez détruire l'armée adverse ou gagner un maximum de points de victoire.","Games Workshop",9999.99,"",2);
+        jeu4 = new JeuDeSociete("Horreur à Arkham","Vous êtes des investigateurs essayant de sauver la ville d'Arkham et par extension, le monde, de sombrer dans le Chaos face à de Grands Anciens.","A",20,"arkham",8);
+        jeu5 = new JeuDeSociete("Warhammer 40 000","Vous  êtes au commande d'une Armée provenant d'une des nombreuses factions du 41ème Millénaire et devez détruire l'armée adverse ou gagner un maximum de points de victoire.","Games Workshop",9999.99,"warhammer",2);
         mesJeux.add(jeu1);
         mesJeux.add(jeu2);
         mesJeux.add(jeu3);
